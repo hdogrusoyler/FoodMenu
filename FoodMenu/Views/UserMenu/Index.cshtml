@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Menu>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="m-4">
+
+    <div class="bg-success text-white p-2">
+        Menüler
+    </div>
+    <table class="table table-striped table-bordered table-sm">
+
+        <thead>
+            <tr>
+                <th>Menü Tarihi</th>
+                <th colspan="2">Kullanıcılar</th>
+                <th>#</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @if (Model?.Count() > 0)
+            {
+                @foreach (var menu in Model)
+                {
+                    <tr>
+                        <td>@menu.MenuDate</td>
+                        <td colspan="2">
+                            @(string.Join(", ", menu.UserMenus.Select(ps => ps.User.Name)))
+                        </td>
+                        <td>
+                            <a asp-action="EditMenu"
+                               asp-route-id="@menu.MenuId"
+                               class="btn btn-sm btn-primary">Düzenle</a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="3">Menu Yok</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

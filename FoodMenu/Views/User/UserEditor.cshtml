@@ -1,0 +1,46 @@
+﻿@model User
+@{
+    ViewData["Title"] = Model == null ? "Create" : "Edit";
+}
+
+<div class="m-4">
+
+    <div class="bg-success text-white p-4">
+        Kullanıcı Ekle Düzenle
+    </div>
+
+    <form asp-action="Edit" method="post">
+
+        <input type="hidden" asp-for="UserId" />
+
+        <div class="row">
+            <div class="col">
+
+                <div class="bg-primary text-white p-2 mt-3">
+                    Kullanıcı
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <label asp-for="Surname"></label>
+                    <input asp-for="Surname" class="form-control" />
+                    <label asp-for="TCKN"></label>
+                    <input asp-for="TCKN" class="form-control" />
+                    <label asp-for="Password"></label>
+                    <input asp-for="Password" class="form-control" />
+                    <label asp-for="isAdmin"></label>
+                    <input asp-for="isAdmin" class="form-control" />
+                </div>
+            </div>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Kullanıcı Ekle</button>
+        <a class="btn btn-primary" asp-action="Index">
+            Geri
+        </a>
+    </form>
+
+</div>
+

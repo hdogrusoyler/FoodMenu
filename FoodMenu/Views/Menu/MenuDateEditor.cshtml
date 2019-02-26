@@ -1,0 +1,38 @@
+﻿@model Menu
+@{
+    ViewData["Title"] = Model == null ? "Create" : "Edit";
+}
+
+<div class="m-4">
+
+    <div class="bg-success text-white p-4">
+        Yemek Ekle Düzenle
+    </div>
+
+    <form asp-action="Edit" method="post">
+
+        <input type="hidden" asp-for="MenuId" />
+
+        <div class="row">
+            <div class="col">
+
+                <div class="bg-primary text-white p-2 mt-3">
+                    Yemek Adı
+                </div>
+
+                <div class="form-group">
+                    @*<label asp-for="FoodName"></label>*@
+                    <input asp-for="MenuDate" class="form-control" />
+                </div>
+            </div>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a class="btn btn-primary" asp-action="Index">
+            Geri
+        </a>
+    </form>
+
+</div>
+

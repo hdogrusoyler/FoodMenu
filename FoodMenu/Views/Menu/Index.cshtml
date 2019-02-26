@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Menu>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="m-4">
+
+    <div class="bg-success text-white p-2">
+        Menüler
+    </div>
+    <table class="table table-striped table-bordered table-sm">
+
+        <thead>
+            <tr>
+                <th>Menü Tarihi</th>
+                <th>#</th>
+                <th colspan="2">Yemekler</th>
+                <th>#</th>
+                <th>#</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @if (Model?.Count() > 0)
+            {
+                @foreach (var menu in Model)
+                {
+                    <tr>
+                        <td>@menu.MenuDate</td>
+                        <td>
+                            <a asp-action="Edit"
+                               asp-route-id="@menu.MenuId"
+                               class="btn btn-sm btn-primary">Düzenle</a>
+                        </td>
+                        <td colspan="2">
+                            @(string.Join(", ", menu.FoodMenus.Select(ps => ps.Food.FoodName)))
+                        </td>
+                        <td>
+                            <a asp-action="EditMenu"
+                               asp-route-id="@menu.MenuId"
+                               class="btn btn-sm btn-primary">Düzenle</a>
+                        </td>
+                        <td>
+                            <a asp-action="Delete"
+                               asp-route-id="@menu.MenuId"
+                               class="btn btn-sm btn-primary">Sil</a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="3">Menu Yok</td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+    <td>
+        <a class="btn btn-primary" asp-controller="Menu" asp-action="Edit">
+            Menu Tarihi Ekle
+        </a>
+    </td>
+</div>

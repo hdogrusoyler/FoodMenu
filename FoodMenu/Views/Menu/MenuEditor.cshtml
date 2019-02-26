@@ -1,0 +1,43 @@
+﻿@model Menu
+@{
+    ViewData["Title"] = "Edit";
+}
+<div class="m-4">
+    <div class="bg-success text-white p-4">
+        <div class="col">@Model.MenuDate tarihli Menü</div>
+    </div>
+
+    <form asp-action="EditMenu" method="post">
+        <input type="hidden" asp-for="MenuId" />
+
+        <div class="row">
+            <div class="col-8 m-3">
+                <br />
+                @foreach (Food p in ViewBag.Foods)
+                {
+                    <div class="form-row">
+                        <div class="form-group col-1">
+                            @if (p.FoodMenus.Any(ps => ps.MenuId == Model.MenuId))
+                            {
+                                <input type="checkbox" name="foodid" value="@p.FoodId" checked />
+                            }
+                            else
+                            {
+                                <input type="checkbox" name="foodid" value="@p.FoodId" />
+                            }
+                        </div>
+                        <div class="form-group col">
+                            <label class="form-control-label">@p.FoodName</label>
+                        </div>
+                        
+                    </div>
+                }
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+
+</div>
+
