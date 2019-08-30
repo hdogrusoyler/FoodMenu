@@ -15051,11 +15051,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hus\\source\\repos\\FoodMenu\\FoodMenu\\FoodMenu.csproj",
+      "projectUniqueName": "C:\\Users\\hus\\source\\repos\\c\\m\\FoodMenu\\FoodMenu\\FoodMenu.csproj",
       "projectName": "FoodMenu",
-      "projectPath": "C:\\Users\\hus\\source\\repos\\FoodMenu\\FoodMenu\\FoodMenu.csproj",
+      "projectPath": "C:\\Users\\hus\\source\\repos\\c\\m\\FoodMenu\\FoodMenu\\FoodMenu.csproj",
       "packagesPath": "C:\\Users\\hus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hus\\source\\repos\\FoodMenu\\FoodMenu\\obj\\",
+      "outputPath": "C:\\Users\\hus\\source\\repos\\c\\m\\FoodMenu\\FoodMenu\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
